@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sencees/core/constants/app_colors.dart';
+import 'package:sencees/src/core/constants/app_colors.dart';
 
 class AppThemes {
   static final lightTheme = ThemeData(
@@ -22,7 +22,20 @@ class AppThemes {
           borderSide:
               const BorderSide(color: AppColors.appLightBlue, width: 2.0),
         ),
-      ));
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide(color: Colors.red.shade800, width: 2.0),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide(color: Colors.red.shade800, width: 2.0),
+        ),
+        errorStyle: TextStyle(
+          color: Colors.red.shade800,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      dialogBackgroundColor: AppColors.appToastColorLight);
 
   static final darkTheme = ThemeData(
       scaffoldBackgroundColor: AppColors.primaryDark,
@@ -44,5 +57,18 @@ class AppThemes {
           borderSide:
               const BorderSide(color: AppColors.appLightBlue, width: 2.0),
         ),
-      ));
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide(width: 2.0, color: Colors.red.shade200),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide(width: 2.0, color: Colors.red.shade200),
+        ),
+        errorStyle: TextStyle(
+          color: Colors.red.shade200,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      dialogBackgroundColor: AppColors.appToastColorDark);
 }

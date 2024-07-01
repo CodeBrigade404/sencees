@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:sencees/src/app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sencees/features/authentication/presentation/views/login_view.dart';
-import 'package:sencees/features/user_onboard/presentation/views/onboarding_view.dart';
-import 'package:sencees/main.dart';
+import 'package:sencees/src/features/authentication/presentation/views/login_view.dart';
+import 'package:sencees/src/features/user_onboard/presentation/views/onboarding_view.dart';
 
 void main() {
   testWidgets('MyApp shows LoginView when onboarding is true',

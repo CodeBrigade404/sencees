@@ -1,4 +1,4 @@
-import 'onboarding_info.dart';
+import '../repository/onboarding_info.dart';
 
 class OnboardingItems {
   List<OnboardingInfo> items = [

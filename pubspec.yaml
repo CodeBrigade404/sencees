@@ -37,10 +37,10 @@ dependencies:
   flutter_native_splash: ^2.4.0
   flutter_riverpod: ^2.5.1
   google_fonts: ^6.2.1
-  dio: ^5.4.3+1
-  get_it: ^7.7.0
   shared_preferences: ^2.2.3
   smooth_page_indicator: ^1.1.0
+  http: ^1.2.1
+  toastification: ^2.0.0
 
 dev_dependencies:
   flutter_test:

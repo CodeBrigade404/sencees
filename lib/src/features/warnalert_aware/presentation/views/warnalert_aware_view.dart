@@ -2,6 +2,7 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:sencees/src/core/components/app_default_button.dart';
 import 'package:sencees/src/core/constants/app_colors.dart';
+import 'package:tflite_flutter/tflite_flutter.dart';
 
 class WarnAlertAwareView extends StatelessWidget {
   const WarnAlertAwareView({super.key});
@@ -28,8 +29,7 @@ class WarnAlertAwareView extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage('assets/images/warn.png'),
-                  fit: BoxFit
-                      .cover, // Ensures the image is fully visible inside the circle
+                  fit: BoxFit.cover, // Ensures the image is fully visible inside the circle
                 ),
               ),
             ),

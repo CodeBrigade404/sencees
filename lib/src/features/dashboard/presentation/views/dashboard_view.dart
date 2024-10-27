@@ -17,8 +17,7 @@ class DashboardView extends ConsumerStatefulWidget {
   ConsumerState<DashboardView> createState() => _DashboardViewState();
 }
 
-class _DashboardViewState extends ConsumerState<DashboardView>
-    with TickerProviderStateMixin {
+class _DashboardViewState extends ConsumerState<DashboardView> with TickerProviderStateMixin {
   late final AnimationController _controller;
 
   @override
@@ -76,8 +75,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
                         ),
                         Text(
                           '${userState?.firstName} ${userState?.lastName}',
-                          style: const TextStyle(
-                              fontSize: 24.0, fontWeight: FontWeight.bold),
+                          style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -147,8 +145,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
                         ),
                         InkWell(
                           onTap: () async {
-                            SharedPreferences prefs =
-                                await SharedPreferences.getInstance();
+                            SharedPreferences prefs = await SharedPreferences.getInstance();
                             await prefs.remove("accessToken");
                             Navigator.push(
                               context,
@@ -210,7 +207,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
                       const CommunicationAnalyzerView(),
                       const CommunicationAssistView(),
                       const WarnAlertAwareView(),
-                      const EnviroSensAwareView(),
+                      const EnvirosensAware(),
                     ];
 
                     return GestureDetector(
@@ -232,9 +229,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
                                 width: 80,
                                 height: 80,
                                 child: Padding(
-                                  padding: (index == 1 || index == 3)
-                                      ? const EdgeInsets.all(14.0)
-                                      : EdgeInsets.zero,
+                                  padding: (index == 1 || index == 3) ? const EdgeInsets.all(14.0) : EdgeInsets.zero,
                                   child: Lottie.asset(
                                     animationPath,
                                     controller: _controller,

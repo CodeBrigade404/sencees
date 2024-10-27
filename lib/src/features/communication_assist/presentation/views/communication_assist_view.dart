@@ -13,8 +13,7 @@ class CommunicationAssistView extends ConsumerStatefulWidget {
   const CommunicationAssistView({super.key});
 
   @override
-  ConsumerState<CommunicationAssistView> createState() =>
-      _CommunicationAssistView();
+  ConsumerState<CommunicationAssistView> createState() => _CommunicationAssistView();
 }
 
 class _CommunicationAssistView extends ConsumerState<CommunicationAssistView> {
@@ -159,8 +158,7 @@ class _CommunicationAssistView extends ConsumerState<CommunicationAssistView> {
             icon: Icon(
               _speechToText.isNotListening ? Icons.mic_off : Icons.mic,
             ),
-            onPressed:
-                _speechToText.isNotListening ? _startListening : _stopListening,
+            onPressed: _speechToText.isNotListening ? _startListening : _stopListening,
             tooltip: 'Listen',
           ),
         ],
@@ -176,8 +174,7 @@ class _CommunicationAssistView extends ConsumerState<CommunicationAssistView> {
                   return const Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+                      padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                       child: Text(
                         "I'm Thinking...",
                         style: TextStyle(fontStyle: FontStyle.italic),
@@ -190,16 +187,11 @@ class _CommunicationAssistView extends ConsumerState<CommunicationAssistView> {
                 bool isUserMessage = message['role'] == 'user';
 
                 return Align(
-                  alignment: isUserMessage
-                      ? Alignment.centerLeft
-                      : Alignment.centerRight,
+                  alignment: isUserMessage ? Alignment.centerLeft : Alignment.centerRight,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 5.0, horizontal: 10.0),
+                    padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                     child: Row(
-                      mainAxisAlignment: isUserMessage
-                          ? MainAxisAlignment.start
-                          : MainAxisAlignment.end,
+                      mainAxisAlignment: isUserMessage ? MainAxisAlignment.start : MainAxisAlignment.end,
                       children: [
                         if (!isUserMessage)
                           IconButton(
@@ -209,28 +201,19 @@ class _CommunicationAssistView extends ConsumerState<CommunicationAssistView> {
                         Expanded(
                           child: ChatBubble(
                             clipper: ChatBubbleClipper1(
-                              type: isUserMessage
-                                  ? BubbleType.receiverBubble
-                                  : BubbleType.sendBubble,
+                              type: isUserMessage ? BubbleType.receiverBubble : BubbleType.sendBubble,
                             ),
-                            backGroundColor: isUserMessage
-                                ? Colors.white
-                                : AppColors.appLightBlue,
+                            backGroundColor: isUserMessage ? Colors.white : AppColors.appLightBlue,
                             margin: const EdgeInsets.only(top: 20),
                             child: Container(
                               constraints: BoxConstraints(
-                                maxWidth:
-                                    MediaQuery.of(context).size.width * 0.7,
+                                maxWidth: MediaQuery.of(context).size.width * 0.7,
                               ),
                               child: Text(
                                 message['message'] ?? '',
                                 style: TextStyle(
-                                  color: isUserMessage
-                                      ? Colors.black
-                                      : Colors.white,
-                                  fontWeight: isUserMessage
-                                      ? FontWeight.bold
-                                      : FontWeight.normal,
+                                  color: isUserMessage ? Colors.black : Colors.white,
+                                  fontWeight: isUserMessage ? FontWeight.bold : FontWeight.normal,
                                 ),
                               ),
                             ),
@@ -254,8 +237,7 @@ class _CommunicationAssistView extends ConsumerState<CommunicationAssistView> {
                         onPressed: () => _sendAiMessage(suggestion),
                         style: TextButton.styleFrom(
                           foregroundColor: Colors.black,
-                          backgroundColor: const Color.fromARGB(
-                              255, 239, 238, 238), // Text color
+                          backgroundColor: const Color.fromARGB(255, 239, 238, 238), // Text color
                           // Adjust padding if needed
                         ),
                         child: Text(suggestion),
